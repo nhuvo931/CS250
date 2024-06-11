@@ -1,0 +1,84 @@
+Test Case Template,,,,,,,,,
+TestCaseId,Component,Priority,Description/Test Summary,Pre-requisites,Test Steps,Expected Result,Actual Result,Status,Test Executed By
+TC_01,Registration for a new user,P4,Verify that a new user can make an account on the website.,"1. Have access to the registration page
+2. Test data for a new user, including valid email, password, and username","1. Navigate to the registration page
+2. Enter email, password, and username 
+3. Click Create Account Button
+4. Send an email to the email provided, and provide a link to confirm the email address
+5. Redirect to email confirmation page from the link provided.","1.The user receives an email that redirects them to the confirmation page
+2.The user is automatically logged in with their newly created account","1.The user received an email that redirected them to the confirmation page
+2.The user is automatically logged in with their newly created account",Pass,Nhu Vo
+TC_02,Logging into an existing account.,P4,Verify that an existing user can login to the website.,"1. Have access to the login page
+2. An existing user account with valid credentials (username and password).","1. Navigate to the movie ticketing website's login page.
+2. Enter the valid username in the username field and valid password in the password field.
+3. Click the Login button.
+4. Redirect to the home page, with a small window on the side saying successfully logged in.","1. The user is successfully logged in. 
+2. The user is redirected to the home page.","1. The user is successfully logged in. 
+2. The user is redirected to the home page.",Pass,Nhu Vo
+TC_03,Book a Ticket,P4,Verify a user can book a ticket,"1. Have access to the movie selection page
+2. Must be logged into the website.","1. Navigate to the movie ticketing website's movie selection page
+2. Select any movie available.
+3. Click on available showtimes for movie
+4. Select a showtime
+5. Choose seats
+6. Purchase Ticket
+7. View ticket details","1. The ticket is successfully purchased
+2. The user receives a confirmation email with booking details.","1. The ticket is successfully purchased
+2. The user receives a confirmation email with booking details.",Pass,Nhu Vo
+TC_04,Cancel a Booking,P2,Verify that a user can cancel a previously booked ticket.,"1. The user must be logged in.
+2. The user must have an existing booking.","1. Navigate to the user's booking page.
+2. Select the booking to cancel.
+3. Click the ""Cancel Booking"" button.
+4. Confirm the cancellation.","1. The booking was successfully canceled.
+2. The user receives a confirmation email of the cancellation.
+3. The seat is marked as available.","1. The booking was successfully canceled.
+2. The user receives a confirmation email of the cancellation.
+3. The seat is marked as available.",Pass,Nhu Vo
+TC_05,View Booking History,P2,Verify that a user can view their booking history.,The user must be logged in.,"1. Navigate to the user's account page.
+2. Click on the ""Booking History"" link.
+3. View the list of past bookings.","The user sees a list of their past bookings with details such as movie name, showtime, and seat number","The user saw a list of their past bookings with details such as movie name, showtime, and seat number",Pass,Sushil Rawtani
+TC_06,Successful Payment Processing,P3,Verify that the payment gateway processes a payment successfully.,"1. User is on the payment page.
+2. Valid payment details are available.","1. Enter valid payment details.
+2. Click the ""Pay Now"" button.
+3. Confirm the payment.","1. Payment is processed successfully.
+2. User receives a payment confirmation message and email.","1. Payment was processed successfully.
+2. User received a payment confirmation message and email.",Pass,Sushil Rawtani
+TC_07,Payment Failure Handling,P3,Verify that the system handles payment failures appropriately.,"1. User is on the payment page.
+2. Invalid payment details (e.g., expired cards) are used.","1. Enter invalid payment details.
+2. Click the ""Pay Now"" button.","1. Payment fails.
+2. The user receives an error message indicating the reason for the failure.
+3. The user can retry the payment with different details.","1. Payment failed.
+2. The user received an error message indicating the reason for the failure.
+3. The user can retry the payment with different details.",Pass,Sushil Rawtani
+TC_08,Adding a movie,P3,Make sure an admin can add a new movie to the system.,"1. Admin’s account has admin privileges.
+2. Admin can access the admin control panel on the website.","1. Navigate to the admin control panel.
+2. Select the option to add a new movie.
+3. Enter movie details.
+4. Click the ""Add"" button.","1. The new movie is added to the database.
+2. The movie appears in the list of available movies on the movie selection page.","1. The new movie was added to the database.
+2. The movie appeared in the list of available movies on the movie selection page.",Pass,Sushil Rawtani
+TC_09,Deleting a movie,P1,Make sure an admin can delete a movie to the system.,"1. Admin’s account has admin privileges.
+2. Admin can access the admin control panel on the website.","1. Navigate to the admin control panel.
+2. Select the movie that you want to delete.
+3. Click the ""Manage"" button next to the movie.
+4. Click the “Delete” button on the movie’s management panel. 
+5. Confirm the deletion.","1. The selected movie is successfully removed from the database.
+2. The movie appears in the list of available movies on the movie selection page.","1. The selected movie was successfully removed from the database.
+2. The movie appeared in the list of available movies on the movie selection page.",Pass,Sushil Rawtani
+TC_10,Valid Email,P1,Ensure that the email format is valid.,User registration/login has a field for email.,"1. Input an invalid email or invalid email format.
+2. Check the if valid/invalid.",The system rejects invalid emails and accepts valid emails.,The system rejected all invalid emails and accepted all valid emails.,Pass,Adrian Arguelles
+TC_11,Valid Password,P1,"Ensure that the password is valid (meets all password requirements, no illegal characters)",User registration/login has a field for password.,"1. Input an invalid password.
+2. Check if it is valid/invalid.",The system rejects the invalid password and asks the user to enter another password.,The system rejected the invalid password and asked the user to enter another password.,Pass,Adrian Arguelles
+TC_12,Retrieve User Information,P4,Verify that the backend correctly retrieves user information from the database.,User account exists in the database.,"1. Send a request to the API endpoint to retrieve user information.
+2. Include the user ID or username as a parameter.
+3. Validate the response received from the backend.","1. The response contains the correct user information, such as username, email, and booking history.
+2. Data integrity is maintained and matches the records in the database.","1. The response contained the correct user information, such as username, email, and booking history.
+2. Data integrity was maintained and matched the records in the database.",Pass,Adrian Arguelles
+TC_13,Update Movie Details,P3,Verify that the backend allows administrators to update movie details correctly.,"1. Admin account with appropriate privileges.
+2. Existing movie records in the database.","1. Log in as an admin.
+2. Send a request to the API endpoint to update movie details.
+3. Include the movie ID and updated details (e.g., new showtime, updated rating) as parameters.
+4. Validate the response received from the backend.
+5. Retrieve the updated movie details from the database to confirm the changes.","1. The movie details are updated successfully in the database.
+2. The updated information is accurately reflected when queried.","1. The movie details were updated successfully in the database.
+2. The updated information was accurately reflected when queried.",Pass,Adrian Arguelles
